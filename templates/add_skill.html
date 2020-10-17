@@ -1,0 +1,15 @@
+{% extends 'custom_admin.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <button class="btn btn-primary mt-3">Add Skill</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

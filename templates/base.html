@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+       <script src="https://kit.fontawesome.com/ec62e568cb.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+        <div class="wrapper">
+            <div class="sidebar">
+                <center>
+                    {% block profile %}
+
+                    {% endblock %}
+                </center>
+            <ul>
+                <li><a href="about-me">About Me</a></li>
+                <li><a href="skill">Skill</a></li>
+                <li><a href="interest">Interest</a></li>
+                <li><a href="award">Award</a></li>
+                <li><a href="education">Education</a></li>
+                <li><a href="experience">Experience</a></li>
+                
+            </ul>
+            </div>
+
+            <div class="main_content">
+                <div class="header">This Is {% block name %}{% endblock %}</div>
+                <div class="info">
+                    <div>
+                        {% block content %}
+                        
+                        {% endblock %}
+                    </div> 
+                </div>
+            
+            </div>
+        
+        </div>
+        
+    </body>
+
+</html>

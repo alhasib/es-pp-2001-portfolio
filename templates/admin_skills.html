@@ -1,0 +1,35 @@
+{% extends 'custom_admin.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <a href="{% url 'add_skill' %}"><button class="btn btn-primary">Add Skill</button></a>
+    <h2 style="text-align: center;">My Skills</h2>           
+    {% if message %}
+        <h2 style="text-align: center; font-size:14px">{{ message }}</h2>
+    {% else %}
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Skill Name</th>
+            <th>Action</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            {% for skill in skills %}
+              <tr>
+              <td>{{ skill.name }}</td>
+              <td><button class="btn btn-primary">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+  </div>
+        </div>
+    </div>
+{% endblock %}

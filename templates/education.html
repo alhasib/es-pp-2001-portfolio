@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block profile %}
+<img src="{{profile.photo.url}}">
+    <h4>{{ profile.name }}</h4>
+    {% if profile.fb_id %}
+    <a href="{{ profile.fb_id }}" target="_blank"><i class="fab fa-facebook" style="font-size:48px; color: aliceblue;"></i></a>
+    {% endif %}
+
+    {% if profile.linkedin_id %}
+    <a href="{{ profile.linkedin_id }}" target="_blank"><i class="fab fa-linkedin" style="font-size:48px; color: aliceblue;"></i></a>
+    {% endif %}
+{% endblock %}
+
+{% block name %}
+    {{ name }}<span>'s </span>{{ title }}
+{% endblock %}
+
+{% block content %}
+    {% for i in education %}
+    <div class="row mt-3">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ i.name_of_degree }}({{ i.passing_year }})</h5>
+              <p class="card-text">{{ i.name_of_institution }} [{{ i.department }}]</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+{% endblock %}

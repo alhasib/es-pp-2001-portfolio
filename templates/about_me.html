@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block profile %}
+    <img src="{{profile.photo.url}}">
+    <h4>{{ profile.name }}</h4>
+    {% if profile.fb_id %}
+    <a href="{{ profile.fb_id }}" target="_blank"><i class="fab fa-facebook" style="font-size:48px; color: aliceblue;"></i></a>
+    {% endif %}
+
+    {% if profile.linkedin_id %}
+    <a href="{{ profile.linkedin_id }}" target="_blank"><i class="fab fa-linkedin" style="font-size:48px; color: aliceblue;"></i></a>
+    {% endif %}  
+
+{% endblock %}
+
+{% block name %}
+{{ about_me.user.username }}
+{% endblock %}
+
+{% block content %}
+
+    {{ about_me.about_me }}
+{% endblock %}

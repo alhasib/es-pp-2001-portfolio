@@ -1,0 +1,54 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+       <script src="https://kit.fontawesome.com/ec62e568cb.js" crossorigin="anonymous"></script>
+    <title>Portfolio Custom Admin</title>
+    </head>
+    <body>
+
+        <div class="wrapper">
+            <div class="sidebar">
+                <center>
+                    {% block profile %}
+
+                    {% endblock %}
+                </center>
+            <ul>
+                <li><a href="#">About Me</a></li>
+                <li><a href="{% url 'admin_skill' %}">My Skill</a></li>
+                <li><a href="#">Add Interest</a></li>
+                <li><a href="#">Add Award</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Experience</a></li>
+                <li><a href="{% url 'logout' %}"><link rel="stylesheet">Log Out</a></li>
+                
+            </ul>
+            </div>
+
+            <div class="main_content">
+                <div class="header">
+                    {% if user.is_authenticated %}
+                        <span>Welcome! {{ user.username }}</span>
+                    {% endif %}
+                </div>
+                <div class="info">
+                    <div>
+                        {% block content %}
+                        
+                        {% endblock %}
+                    </div> 
+                </div>
+            
+            </div>
+        
+        </div>
+        
+    </body>
+
+</html>
