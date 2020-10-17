@@ -121,6 +121,7 @@ def admin_skills(request):
         pass
 
 def add_skill(request):
+    print("bla bla bla")
     if request.method == 'POST':
         form = AddSkillForm(request.POST)
         if form.is_valid():
