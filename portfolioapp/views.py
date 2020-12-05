@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 # Create your views here.
 
-@login_required(login_url = 'login')
+
 def about_me(request,name):
     profile = Profile.objects.get(user__username = name)
     about_me = AboutMe.objects.get(user__username = name)
