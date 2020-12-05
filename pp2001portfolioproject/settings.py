@@ -25,7 +25,7 @@ SECRET_KEY = '9+7d$mbt)_nza3*aaf!jdypr&k2e5ke@kdiwpvn1r^*_p5)-u('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['rifatportfolio.herokuapp.com/','127.0.0.1']
+ALLOWED_HOSTS = ['hasibportfolio.herokuapp.com/','127.0.0.1']
 
 
 # Application definition
